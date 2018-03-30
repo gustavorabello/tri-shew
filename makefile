@@ -98,6 +98,9 @@ all: $(BIN)triangle $(BIN)showme
 
 trilibrary: $(BIN)triangle.o $(BIN)tricall
 
+trilib: $(BIN)triangle.o 
+	ar r libtri.a $(BIN)triangle.o 
+
 $(BIN)triangle: $(SRC)triangle.c
 	$(CC) $(CSWITCHES) -o $(BIN)triangle $(SRC)triangle.c -lm
 
